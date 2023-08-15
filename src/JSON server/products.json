@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img_url": "https://www.mindat.org/imagecache/aa/6d/06855920014952932944130.jpg",
+      "product_name": "Quartz",
+      "description": "Formed 7 km under the surface, taken from Kiriath-Arba",
+      "price": 300000
+    },
+    {
+      "id": 4,
+      "img_url": "https://www.mindat.org/imagecache/d5/4a/09939630014953454985016.jpg",
+      "product_name": "Calcite",
+      "description": "Formed 1 km under the surface, taken from Kiriath-Arba",
+      "price": 100000
+    },
+    {
+      "id": 5,
+      "img_url": "https://www.mindat.org/imagecache/18/d1/02900780014946252048428.jpg",
+      "product_name": "Albite",
+      "description": "Formed 4 km under the surface, taken from Kiriath-Arba",
+      "price": 250000
+    },
+    {
+      "id": 6,
+      "img_url": "https://www.mindat.org/imagecache/11/7a/04766080014946246016426.jpg",
+      "product_name": "Amazonite",
+      "description": "Formed 1 km under the surface, taken from Kiriath-Arba",
+      "price": 12000000
+    },
+    {
+      "id": 7,
+      "img_url": "https://www.mindat.org/imagecache/28/36/03811620014946258475301.jpg",
+      "product_name": "Sanidine",
+      "description": "Formed 5 km under the surface, taken from Kiriath-Arba",
+      "price": 3000000
+    },
+    {
+      "id": 8,
+      "img_url": "https://www.mindat.org/imagecache/ed/0f/02003130014946687832016.jpg",
+      "product_name": "Hyalophane",
+      "description": "Formed 3 km under the surface, taken from Kiriath-Arba",
+      "price": 500000
+    },
+    {
+      "img_url": "https://www.mindat.org/imagecache/07/35/08907260014946249538421.jpg",
+      "product_name": "Wulfenite",
+      "description": "Red Cloud Mine, Silver Mining District, La Paz County, Arizona, USA",
+      "price": 9999999,
+      "id": 9
+    },
+    {
+      "img_url": "https://www.mindat.org/imagecache/b8/29/09475240014977334475671.jpg",
+      "product_name": "Wulfenite",
+      "description": "Barranco del Humo mines, Albuñuelas, Granada, Andalusia, Spain",
+      "price": 888888888,
+      "id": 10
+    },
+    {
+      "img_url": "https://www.mindat.org/imagecache/67/52/09261690014950842613484.jpg",
+      "product_name": "Wulfenite, etc.",
+      "description": "Adami Mine No. 2, Plaka Mines, Plaka, Lavrion mining district, Lavreotiki, East Attica, Attica, Greece",
+      "price": 1111111,
+      "id": 11
+    },
+    {
+      "img_url": "https://www.mindat.org/imagecache/e0/66/03208650014946247524685.jpg",
+      "product_name": "aaa",
+      "description": "bb",
+      "price": 111,
+      "id": 12
+    }
+  ]
+}
