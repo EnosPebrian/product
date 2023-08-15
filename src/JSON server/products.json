@@ -5,7 +5,21 @@
       "img_url": "https://www.mindat.org/imagecache/aa/6d/06855920014952932944130.jpg",
       "product_name": "Quartz",
       "description": "Formed 7 km under the surface, taken from Kiriath-Arba",
-      "price": 300000
+      "price": 3000001
+    },
+    {
+      "id": 2,
+      "img_url": "https://www.mindat.org/imagecache/4b/59/07697720014977152813145.jpg",
+      "product_name": "Labradorite (Plagioclase feldspar)",
+      "description": "Formed 10 km under the surface, taken from Kiriath-Arba",
+      "price": 500000
+    },
+    {
+      "id": 3,
+      "img_url": "https://www.mindat.org/imagecache/8b/bf/07840180014948361215664.jpg",
+      "product_name": "Biotite",
+      "description": "Formed 7 km under the surface, taken from Kiriath-Arba",
+      "price": 200000
     },
     {
       "id": 4,
@@ -43,6 +57,13 @@
       "price": 500000
     },
     {
+      "id": 9,
+      "img_url": "https://www.mindat.org/imagecache/94/17/05556440016189260932869.jpg",
+      "product_name": "Stibnite",
+      "description": "Formed 1 km under the surface, taken from Kiriath-Arba",
+      "price": 11100000
+    },
+    {
       "img_url": "https://www.mindat.org/imagecache/07/35/08907260014946249538421.jpg",
       "product_name": "Wulfenite",
       "description": "Red Cloud Mine, Silver Mining District, La Paz County, Arizona, USA",
@@ -53,22 +74,8 @@
       "img_url": "https://www.mindat.org/imagecache/b8/29/09475240014977334475671.jpg",
       "product_name": "Wulfenite",
       "description": "Barranco del Humo mines, Albuñuelas, Granada, Andalusia, Spain",
-      "price": 888888888,
+      "price": 88888888,
       "id": 10
-    },
-    {
-      "img_url": "https://www.mindat.org/imagecache/67/52/09261690014950842613484.jpg",
-      "product_name": "Wulfenite, etc.",
-      "description": "Adami Mine No. 2, Plaka Mines, Plaka, Lavrion mining district, Lavreotiki, East Attica, Attica, Greece",
-      "price": 1111111,
-      "id": 11
-    },
-    {
-      "img_url": "https://www.mindat.org/imagecache/e0/66/03208650014946247524685.jpg",
-      "product_name": "aaa",
-      "description": "bb",
-      "price": 111,
-      "id": 12
     }
   ]
 }

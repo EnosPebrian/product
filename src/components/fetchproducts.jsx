@@ -47,7 +47,9 @@ function FetchProducts({
                 />
                 <div className="card-body">
                   <h6>{val.product_name}</h6>
-                  <p className="card-text">{val.description}</p>
+                  <p className="card-text" style={{ height: "75px" }}>
+                    {val.description}
+                  </p>
                   <h5>Rp{val.price.toLocaleString("id-ID")},00</h5>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
