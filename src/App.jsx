@@ -4,6 +4,7 @@ import items from "./components/items";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import api from "./api/api";
+import Redirect from "./components/redirect";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,6 +38,7 @@ function App() {
             />
           }
         />
+        <Route path="/" element={<Redirect />} />
       </Routes>
     </>
   );
