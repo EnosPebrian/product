@@ -6,7 +6,13 @@ import "./style.css";
 import PopModal from "./modal_edit";
 import { Button } from "react-bootstrap";
 
-function MarketBody({ products, setProducts, search, setSearch, fetchProducts }) {
+function MarketBody({
+  products,
+  setProducts,
+  search,
+  setSearch,
+  fetchProducts,
+}) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,7 +26,7 @@ function MarketBody({ products, setProducts, search, setSearch, fetchProducts })
       <section className="py-5 text-center container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
-            <h1 className="fw-light">Crystalline Mineral</h1>
+            <h1 className="fw-light">Crystalux</h1>
             <p className="lead text-body-secondary">
               Discover the good looking, unique, natural minerals here
             </p>
