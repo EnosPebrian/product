@@ -30,14 +30,14 @@ function MarketBody({
             <p className="lead text-body-secondary">
               Discover the good looking, unique, natural minerals here
             </p>
-            <p>
+            {/* <p>
               <a href="#" className="btn btn-primary my-2">
                 Main call to action
               </a>
               <a href="#" className="btn btn-secondary my-2">
                 Secondary action
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
