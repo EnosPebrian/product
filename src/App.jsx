@@ -1,6 +1,5 @@
 import Market from "./pages/market";
 import "./App.css";
-import items from "./components/items";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import api from "./api/api";
@@ -10,9 +9,12 @@ function App() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const fetchProducts = async () => {
-    const res = await api.get(`/products?product_name_like=${search}`);
-    setProducts([...res.data]);
-    // console.log(res);
+    try {
+      const res = await api.get(`/products/name?product_name=${search}`);
+      setProducts([...res.data]);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -20,7 +22,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetchProducts();
+    const fetchSearch = setTimeout(() => {
+      fetchProducts();
+    }, 700);
+    return () => {
+      clearTimeout(fetchSearch);
+    };
   }, [search]);
 
   return (

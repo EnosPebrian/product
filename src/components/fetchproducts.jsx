@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PopModal from "./modal_edit";
 import Button from "react-bootstrap/Button";
-import api from "../api/api";
 
 function FetchProducts({
   products = [],
@@ -11,12 +10,11 @@ function FetchProducts({
   fetchProducts,
 }) {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [product, setProduct] = useState("");
-  const handleVal = (name) => {
-    setProduct(name);
+  const [product, setProduct] = useState({});
+  const handleVal = (product) => {
+    setProduct({ ...product });
     handleShow();
   };
 
@@ -24,7 +22,6 @@ function FetchProducts({
     <>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         {products.map((val, index) => {
-          // console.log(`val`, val);
           return (
             <div
               className="col"
@@ -42,12 +39,15 @@ function FetchProducts({
                   aria-label="Placeholder: Thumbnail"
                   preserveAspectRatio="xMidYMid slice"
                   focusable="false"
-                  src={val.img_url}
+                  src={val.url}
                   style={{ aspectRatio: "1/1", objectFit: "cover" }}
                 />
                 <div className="card-body">
                   <h6>{val.product_name}</h6>
-                  <p className="card-text" style={{ height: "75px" }}>
+                  <p
+                    className="card-text"
+                    style={{ maxHeight: "75px", overflowY: "scroll" }}
+                  >
                     {val.description}
                   </p>
                   <h5>Rp{val.price.toLocaleString("id-ID")},00</h5>
@@ -63,7 +63,7 @@ function FetchProducts({
                         Edit
                       </Button>
                     </div>
-                    <small className="text-body-secondary">9 mins</small>
+                    {/* <small className="text-body-secondary">9 mins</small> */}
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ function FetchProducts({
           products={[...products]}
           setProducts={setProducts}
           show={show}
-          handleClose={handleClose}
+          setShow={setShow}
           product={product}
         />
       </div>

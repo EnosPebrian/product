@@ -5,48 +5,47 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import api from "../api/api";
 
-function PopModal({ products, setProducts, product, handleClose, show }) {
-  // console.log(`this product val`, product);
+function PopModal({ products, setProducts, product, setShow, show }) {
+  const handleClose = () => setShow(false);
+  console.log(setShow);
   const new_product = {
-    img_url: "",
+    url: "",
     product_name: "",
     description: "",
     price: 0,
   };
 
-  const [currval, setCurrval] = useState(product ? product : new_product);
-  useEffect(
-    () => (product ? setCurrval(product) : setCurrval(new_product)),
-    [product]
-  );
-
-  // console.log(`currval`, currval);
+  const [currval, setCurrval] = useState({});
+  useEffect(() => {
+    product ? setCurrval({ ...product }) : setCurrval({ ...new_product });
+  }, [product.id]);
 
   function editHandler(e, currval) {
-    // console.log(`123`, e.target.id, e.target.value);
     const temp = { ...currval };
     temp[e.target.id] = e.target.value;
     temp["price"] = Number(temp["price"]);
     setCurrval(temp);
   }
 
-  function setEdit(products, setProducts, currval) {
-    // console.log(`di setEdit`, currval);
+  async function setEdit(products, setProducts, currval) {
     const temp = [...products];
     if (currval.id) {
       const index = products.findIndex((item) => item.id == product.id);
       temp[index] = currval;
       setProducts(temp);
-      api.patch(`/products/${currval.id}`, currval);
+      await api.patch(`/products/${currval.id}`, currval);
+      handleClose();
+      setShow(false);
     } else {
       temp.unshift(currval);
       setProducts(temp);
-      api.post(`/products`, currval);
+      await api.post(`/products`, currval);
+      handleClose();
+      setShow(false);
     }
-    handleClose();
   }
 
-  function deleteproduct(e, currval, products, setProducts) {
+  async function deleteproduct(e, currval, products, setProducts) {
     if (
       window.confirm(
         "are you sure want to delete this product? You cannot revert this process"
@@ -56,7 +55,7 @@ function PopModal({ products, setProducts, product, handleClose, show }) {
       const temp = [...products];
       temp.splice(index, 1);
       setProducts(temp);
-      api.delete(`/products/${product.id}`);
+      await api.delete(`/products/${product.id}`);
       handleClose();
     }
   }
@@ -69,15 +68,13 @@ function PopModal({ products, setProducts, product, handleClose, show }) {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="img_url">
+            <Form.Group className="mb-3" controlId="url">
               <Form.Label>Image URL</Form.Label>
               <Form.Control
                 onChange={(e) => editHandler(e, currval)}
                 type="text"
-                value={currval?.img_url}
-                // value={val.img_url}
+                value={currval?.url}
                 autoFocus
-                // id="img_url"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="product_name">

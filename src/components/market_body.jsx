@@ -1,7 +1,6 @@
 // import AddProductModal from "./AddProductModal";
 import { useState } from "react";
 import FetchProducts from "./fetchproducts";
-import Modal from "./modal_edit";
 import "./style.css";
 import PopModal from "./modal_edit";
 import { Button } from "react-bootstrap";
@@ -14,7 +13,6 @@ function MarketBody({
   fetchProducts,
 }) {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [newdata, setNewdata] = useState("");
   const newproduct = (e) => {
@@ -56,7 +54,7 @@ function MarketBody({
             products={[...products]}
             setProducts={setProducts}
             show={show}
-            handleClose={handleClose}
+            setShow={setShow}
             product={newdata}
           />
         </Button>

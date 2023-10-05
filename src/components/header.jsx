@@ -7,12 +7,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Header({ products, setProducts, search, setSearch }) {
   function searchcapture(e) {
-    console.log(`search`, e.key, e.target.value);
     if (e.key === "Enter") {
       e.preventDefault();
-
-      setSearch(document.getElementById("searchform").value);
     }
+    setSearch(document.getElementById("searchform").value);
   }
 
   function searchcaptureclick(e) {
@@ -51,7 +49,7 @@ function Header({ products, setProducts, search, setSearch }) {
             </Nav>
             <Form className="d-flex">
               <Form.Control
-                onKeyPress={(e) => searchcapture(e)}
+                onChange={(e) => searchcapture(e)}
                 type="text"
                 placeholder="Search"
                 className="me-2"
